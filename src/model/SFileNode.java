@@ -26,6 +26,7 @@ public class SFileNode implements STreeNode {
     private Vector<File> files = new Vector<>();
     private Vector<File> directories = new Vector<>();
     private Vector<File> unhiddenFiles = new Vector<>();
+    private boolean record = false;
 
     public SFileNode() {
         this.file = fileSystemView.getHomeDirectory();
@@ -42,7 +43,7 @@ public class SFileNode implements STreeNode {
                 && !(file.getName().toLowerCase().endsWith(".lnk")));
     }
 
-    public void add(File file){
+    public void add(File file) {
         files.add(file);
     }
 
@@ -148,12 +149,12 @@ public class SFileNode implements STreeNode {
 
     @Override
     public int getFilesCount(boolean useFileHiding) {
-        return useFileHiding?unhiddenFiles.size():files.size();
+        return useFileHiding ? unhiddenFiles.size() : files.size();
     }
 
     @Override
     public Vector<File> getFiles(boolean useFileHiding) {
-        return useFileHiding?unhiddenFiles:files;
+        return useFileHiding ? unhiddenFiles : files;
     }
 
     @Override
@@ -163,5 +164,13 @@ public class SFileNode implements STreeNode {
 
     public String toString() {
         return fileSystemView.getSystemDisplayName(file);
+    }
+
+    public boolean isRecord() {
+        return record;
+    }
+
+    public void setRecord(boolean record) {
+        this.record = record;
     }
 }

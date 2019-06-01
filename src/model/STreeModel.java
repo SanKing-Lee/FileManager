@@ -81,6 +81,7 @@ public class STreeModel implements TreeModel {
         eventListenerList.remove(TreeModelListener.class, l);
     }
 
+
     private void fireTreeStructureChanged(Object oldRoot){
         TreeModelEvent event = new TreeModelEvent(this, new Object[]{oldRoot});
         for(TreeModelListener l : eventListenerList.getListeners(TreeModelListener.class)){

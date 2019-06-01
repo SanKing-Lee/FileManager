@@ -1,8 +1,11 @@
 package model;
 
+import controller.Controller;
 import view.MainFrame;
 
 import javax.swing.*;
+
+import static view.MainFrame.filesTable;
 
 /**
  * Author: Sean
@@ -19,15 +22,14 @@ public class STable extends JTable {
 
     public STable(STableModel sTableModel){
         this.sTableModel = sTableModel;
+        Controller.addRecord(sTableModel.getsFileNode());
         setModel(sTableModel);
-
     }
 
     public void setTable(SFileNode node, boolean useFileHiding){
         sTableModel.setsFileNode(node, useFileHiding);
         setModel(sTableModel);
         updateUI();
-        MainFrame.setTfPath(node.getPath());
     }
 
     public STableModel getModel(){

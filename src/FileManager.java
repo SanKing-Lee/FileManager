@@ -4,6 +4,7 @@ import view.MainFrame;
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
 import java.awt.*;
+import java.io.File;
 
 /**
  * Author: Sean
@@ -23,10 +24,5 @@ public class FileManager {
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setVisible(true);
         });
-
-//        FileSystemView fileSystemView = FileSystemView.getFileSystemView();
-////        System.out.println(fileSystemView.getHomeDirectory());
-//        Controller controller = new Controller();
-//        controller.displayFile();
     }
 }

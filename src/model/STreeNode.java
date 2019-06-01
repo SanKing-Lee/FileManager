@@ -35,4 +35,6 @@ public interface STreeNode {
     public int getFilesCount(boolean useFileHiding);
     public Vector<File> getFiles(boolean useFileHiding);
 
+    // 用于操作文件需要的API
+
 }
